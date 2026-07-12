@@ -31,3 +31,6 @@ Wykorzystałem moduł `Markdown`, aby umieścić na pulpicie podręczną instruk
 
 ### 4. Szczegółowy Rejestr Zdarzeń
 Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
+* Nazwy reguły (`rule.description`).
+* Poziomu ważności (`rule.level`).
+* Nazwy agenta (`agent.name`).
