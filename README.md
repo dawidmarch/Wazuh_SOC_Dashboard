@@ -8,3 +8,9 @@ Projekt przedstawia autorski dashboard stworzony w środowisku Wazuh/Kibana, maj
 * **Procesor (CPU):** Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz
 * **Pamięć RAM:** 32,0 GB
 * **Dysk:** SSD Patriot P210 512GB
+
+## Software Stack
+* **Hiperwzorzec:** Oracle VirtualBox (wersja 7.2.10) – posłużył do stworzenia izolowanej sieci, w której maszyny komunikują się w obrębie podsieci `192.168.0.0/24`, zapewniając stabilne środowisko laboratoryjne.
+* **SIEM / XDR:** Wazuh Manager (Virtual Appliance oparty na Ubuntu) – `192.168.0.115` (Centralny punkt zbierania i analizy logów).
+* **Endpoint (Ofiara):** Windows 10 Pro – `192.168.0.110` (Zainstalowany agent Wazuh oraz sensor Microsoft Sysmon z konfiguracją SwiftOnSecurity).
+* **System Atakującego:** Kali Linux – adresacja w tej samej podsieci `192.168.0.109` (Platforma do generowania ruchu i symulacji ataków).
