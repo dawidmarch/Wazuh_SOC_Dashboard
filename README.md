@@ -22,4 +22,5 @@ Zaprojektowany przeze mnie dashboard zawiera moduły kluczowe dla szybkiej oceny
 Wykorzystałem moduł `Markdown`, aby umieścić na pulpicie podręczną instrukcję postępowania (tzw. SOC Playbook). Dzięki temu, w przypadku wykrycia alertu o poziomie krytycznym (Level 12+), analityk ma przed oczami konkretne kroki, co skraca czas reakcji (MTTR - Mean Time To Respond).
 
 ### 2. Monitoring Stanu i Zagrożeń
-* **Alert Level Gauge:** Wskaźnik typu `Gauge`, który wizualizuje skalę zagrożenia na podstawie zliczonych alertów. Pozwala na błyskawiczne określenie, czy system znajduje się w stanie "bezpiecznym", czy wymaga interwencji.
+**Alert Level Gauge:** Wskaźnik typu `Gauge`, który wizualizuje skalę zagrożenia na podstawie zliczonych alertów. Pozwala na błyskawiczne określenie, czy system znajduje się w stanie "bezpiecznym", czy wymaga interwencji.
+**Metric Counter:** Licznik prezentujący zagregowaną liczbę alertów w czasie rzeczywistym, służący jako główne "powiadomienie" o incydentach.
