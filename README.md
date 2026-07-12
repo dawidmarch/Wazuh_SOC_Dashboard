@@ -42,3 +42,10 @@ Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny fi
 Pozwoliło to na odizolowanie logów ofiary od logów systemowych serwera, co drastycznie podniosło czytelność danych. Wizualizacje zostały oparte na domyślnych indeksach `wazuh-alerts-*` z wykorzystaniem agregacji `Terms` oraz `Date Histogram` dla wykresów czasowych.
 
 ## Podgląd Systemu
+
+
+
+## Przyszły rozwój
+* **Integracja z powiadomieniami:** Konfiguracja alertów wysyłanych przez e-mail/Slack dla zdarzeń o poziomie > 12.
+* **Threat Hunting:** Wdrożenie dodatkowych reguł wykrywających techniki z macierzy MITRE ATT&CK.
+* **Automatyzacja:** Skryptowanie izolacji hosta przez API Wazuh po wykryciu specyficznego ataku.
