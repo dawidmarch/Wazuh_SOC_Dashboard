@@ -15,4 +15,5 @@ Projekt przedstawia autorski dashboard stworzony w środowisku Wazuh/Kibana, maj
 * **Endpoint (Ofiara):** Windows 10 Pro – `192.168.0.110` (Zainstalowany agent Wazuh oraz sensor Microsoft Sysmon z konfiguracją SwiftOnSecurity).
 * **System Atakującego:** Kali Linux – adresacja w tej samej podsieci `192.168.0.109` (Platforma do generowania ruchu i symulacji ataków).
 
-  ## Główne Funkcjonalności Dashboardu
+## Główne Funkcjonalności Dashboardu
+Zaprojektowany przeze mnie dashboard zawiera moduły kluczowe dla szybkiej oceny stanu bezpieczeństwa hosta:
