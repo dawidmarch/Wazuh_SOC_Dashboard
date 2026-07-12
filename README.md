@@ -34,3 +34,8 @@ Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
 * Nazwy reguły (`rule.description`).
 * Poziomu ważności (`rule.level`).
 * Nazwy agenta (`agent.name`).
+
+## Wdrożenie techniczne
+
+Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny filtr w środowisku Kibana:
+`agent.ip: "192.168.0.110"`
