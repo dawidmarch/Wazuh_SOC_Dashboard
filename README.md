@@ -17,3 +17,6 @@ Projekt przedstawia autorski dashboard stworzony w środowisku Wazuh/Kibana, maj
 
 ## Główne Funkcjonalności Dashboardu
 Zaprojektowany przeze mnie dashboard zawiera moduły kluczowe dla szybkiej oceny stanu bezpieczeństwa hosta:
+
+### 1. Panel Procedur Reagowania (Playbook)
+Wykorzystałem moduł `Markdown`, aby umieścić na pulpicie podręczną instrukcję postępowania (tzw. SOC Playbook). Dzięki temu, w przypadku wykrycia alertu o poziomie krytycznym (Level 12+), analityk ma przed oczami konkretne kroki, co skraca czas reakcji (MTTR - Mean Time To Respond).
