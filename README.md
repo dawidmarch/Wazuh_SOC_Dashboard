@@ -40,3 +40,5 @@ Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
 Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny filtr w środowisku Kibana:
 `agent.ip: "192.168.0.110"`
 Pozwoliło to na odizolowanie logów ofiary od logów systemowych serwera, co drastycznie podniosło czytelność danych. Wizualizacje zostały oparte na domyślnych indeksach `wazuh-alerts-*` z wykorzystaniem agregacji `Terms` oraz `Date Histogram` dla wykresów czasowych.
+
+## Podgląd Systemu
