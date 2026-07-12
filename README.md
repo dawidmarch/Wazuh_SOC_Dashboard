@@ -25,8 +25,9 @@ Wykorzystałem moduł `Markdown`, aby umieścić na pulpicie podręczną instruk
 **Alert Level Gauge:** Wskaźnik typu `Gauge`, który wizualizuje skalę zagrożenia na podstawie zliczonych alertów. Pozwala na błyskawiczne określenie, czy system znajduje się w stanie "bezpiecznym", czy wymaga interwencji.
 **Metric Counter:** Licznik prezentujący zagregowaną liczbę alertów w czasie rzeczywistym, służący jako główne "powiadomienie" o incydentach.
 
-### 4. Szczegółowy Rejestr Zdarzeń
-Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
 ### 3. Analiza Trendów
 **Line Chart (Activity):** Wykres liniowy prezentujący natężenie zdarzeń w czasie. Pozwala zidentyfikować anomalie, takie jak nagłe skoki aktywności, które mogą wskazywać na skanowanie portów lub próby przejęcia uprawnień.
 **Pie Chart (Severity Distribution):** Wizualizacja rozkładu ważności zdarzeń, która pomaga priorytetyzować pracę analityka.
+
+### 4. Szczegółowy Rejestr Zdarzeń
+Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
