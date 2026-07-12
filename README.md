@@ -27,3 +27,4 @@ Wykorzystałem moduł `Markdown`, aby umieścić na pulpicie podręczną instruk
 
 ### 3. Analiza Trendów
 **Line Chart (Activity):** Wykres liniowy prezentujący natężenie zdarzeń w czasie. Pozwala zidentyfikować anomalie, takie jak nagłe skoki aktywności, które mogą wskazywać na skanowanie portów lub próby przejęcia uprawnień.
+**Pie Chart (Severity Distribution):** Wizualizacja rozkładu ważności zdarzeń, która pomaga priorytetyzować pracę analityka.
