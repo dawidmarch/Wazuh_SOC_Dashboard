@@ -21,7 +21,8 @@ Na mojej maszynie atakującego zainicjowałem sesję terminalową, aby przeprowa
 ```bash
 # Próba połączenia z zasobem SMB z błędnymi hasłami
 smbclient //192.168.0.110/C$ -U administrator%haslo123
-bash 
+```
+<img width="659" height="557" alt="3" src="https://github.com/user-attachments/assets/3b5b9920-53be-4bbb-ac6f-7f5e2a71df7a" />
 
 ### Faza B: Wykonanie ataku Brute-Force (Windows 10 - Ofiara)
 Z poziomu **Kali Linux** wykonałem sekwencję prób połączenia z zasobem `C$` przy użyciu różnych kombinacji haseł. Każda nieudana próba logowania była monitorowana przez system operacyjny **Windows 10** i przesyłana w czasie rzeczywistym do serwera **Wazuh Manager**.
