@@ -4,12 +4,11 @@
 Celem mojego projektu było przeprowadzenie symulacji ataku typu **Brute-Force** na usługę SMB w izolowanym środowisku laboratoryjnym (Oracle VirtualBox). Eksperyment miał na celu zademonstrowanie zdolności systemu **Wazuh SIEM** oraz **Sysmon** w zakresie wykrywania wielokrotnych prób nieautoryzowanego logowania i naruszeń polityki bezpieczeństwa uwierzytelniania.
 
 ## 2. MITRE ATT&CK Mapowanie
+
 | Tactic | Technique | ID | Opis |
 | :--- | :--- | :--- | :--- |
-| **Execution** | PowerShell | T1059.001 | Wykonanie złośliwego kodu przez interpretator PowerShell. |
-| **Discovery** | File and Directory Discovery | T1083 | Przeszukiwanie systemu w celu pozyskania informacji. |
-
-*Wyjaśnienie:* Wykorzystałem wbudowane binarki systemowe, co pozwoliło mi na ominięcie klasycznych sygnatur antywirusowych i przetestowanie reakcji systemu monitorującego na "bezzłośliwe" narzędzia użyte w niebezpiecznym kontekście.
+| **Credential Access** | Brute Force | T1110 | Wielokrotne próby odgadnięcia hasła w celu uzyskania dostępu. |
+| **Initial Access** | Valid Accounts | T1078 | Próba zalogowania na istniejące konto administratora. |
 
 ## 3. Metodologia mojego ataku
 ### Faza A: Przygotowanie środowiska (Kali Linux - Atakujący)
