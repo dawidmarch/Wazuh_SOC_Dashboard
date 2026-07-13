@@ -41,7 +41,7 @@ Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny fi
 `agent.ip: "192.168.0.110"`
 Pozwoliło to na odizolowanie logów ofiary od logów systemowych serwera, co drastycznie podniosło czytelność danych. Wizualizacje zostały oparte na domyślnych indeksach `wazuh-alerts-*` z wykorzystaniem agregacji `Terms` oraz `Date Histogram` dla wykresów czasowych.
 
-### 5. Analiza Operacyjna: Podgląd Systemu (24h)
+## Analiza Operacyjna: Podgląd Systemu (24h)
 
 <img width="1867" height="785" alt="1" src="https://github.com/user-attachments/assets/0744307a-2713-4d66-8d81-07486b992a2f" />
 
