@@ -50,3 +50,10 @@ Po wykryciu aktywności przez system, poddałem alerty analizie wewnątrz dashbo
 ## 5. Wnioski techniczne 
 - **Krytyczność:** Podczas moich testów potwierdziłem, że system SIEM jest kluczowy dla wykrywania prób łamania haseł. Nawet pojedyncze próby połączenia (Error: NT_STATUS_IO_TIMEOUT) zostawiają ślad, który pozwala analitykowi zidentyfikować źródło ataku (adres IP Kali Linux).
 - **Widoczność:** Zrozumiałem, jak ważne jest monitorowanie logów `Security` (EventChannel) na Windowsie. Bez odpowiedniej konfiguracji `ossec.conf` dla tego kanału, ataki typu brute-force pozostałyby niezauważone przez dashboard.
+
+## 6. Rekomendacje 
+Na podstawie wyników mojego eksperymentu, w celu mitygacji ryzyka, zalecam:
+
+1. **Blokada po X nieudanych próbach:** Wdrożenie zasad GPO (Account Lockout Policy), które zablokują konto po 3-5 nieudanych próbach logowania.
+2. **Monitoring anomalii:** Skonfigurowanie alertów "Threshold" w Wazuh, które wyślą powiadomienie e-mail/Slack w momencie wykrycia 10 prób logowania w ciągu minuty z jednego adresu IP.
+3. **Izolacja usługi SMB:** Jeśli SMB nie jest wymagane do komunikacji z zewnątrz, należy ograniczyć dostęp do tego protokołu wyłącznie do zaufanych podsieci w firewallu.
