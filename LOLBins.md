@@ -12,3 +12,5 @@ Celem mojego projektu było przeprowadzenie symulacji zaawansowanego ataku typu 
 *Wyjaśnienie:* Wykorzystałem wbudowane binarki systemowe, co pozwoliło mi na ominięcie klasycznych sygnatur antywirusowych i przetestowanie reakcji systemu monitorującego na "bezzłośliwe" narzędzia użyte w niebezpiecznym kontekście.
 
 ## 3. Metodologia mojego ataku
+### Faza A: Przygotowanie środowiska (Kali Linux - Atakujący)
+Na mojej maszynie atakującego zainicjowałem próbę uzyskania dostępu do zasobów systemu Windows.
