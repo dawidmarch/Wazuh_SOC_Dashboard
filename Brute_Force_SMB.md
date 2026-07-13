@@ -1,7 +1,7 @@
 # Case Study: Analiza próby nieautoryzowanego dostępu (Brute-Force SMB)
 
 ## 1. Cel mojego projektu
-Celem mojego projektu było przeprowadzenie symulacji ataku typu **Brute-Force** na usługę SMB w izolowanym środowisku laboratoryjnym (Oracle VirtualBox). Eksperyment miał na celu zademonstrowanie zdolności systemu **Wazuh SIEM** oraz **Sysmon** w zakresie wykrywania wielokrotnych prób nieautoryzowanego logowania i naruszeń polityki bezpieczeństwa uwierzytelniania.
+Celem mojego projektu było przeprowadzenie symulacji ataku typu **Brute-Force** na usługę SMB w izolowanym środowisku laboratoryjnym. Eksperyment miał na celu zademonstrowanie zdolności systemu **Wazuh SIEM** oraz **Sysmon** w zakresie wykrywania wielokrotnych prób nieautoryzowanego logowania i naruszeń polityki bezpieczeństwa uwierzytelniania.
 
 ## 2. MITRE ATT&CK Mapowanie
 
