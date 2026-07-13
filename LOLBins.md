@@ -13,10 +13,11 @@ Celem mojego projektu było przeprowadzenie symulacji ataku typu **Brute-Force**
 *Wyjaśnienie:* Wykorzystałem narzędzie `smbclient` do masowej próby uwierzytelnienia się do zasobów SMB ofiary, co miało na celu wywołanie zdarzeń typu "Failed Logon" w dziennikach systemu Windows.
 
 ## 3. Metodologia mojego ataku
+
 ### Faza A: Przygotowanie środowiska (Kali Linux - Atakujący)
-Na mojej maszynie atakującego zainicjowałem próbę uzyskania dostępu do zasobów systemu Windows.
+Na mojej maszynie atakującego zainicjowałem sesję terminalową, aby przeprowadzić atak na usługę SMB.
 
 **Komendy, których użyłem (próba logowania):**
 ```bash
-# Próba połączenia z zasobem SMB
+# Próba połączenia z zasobem SMB z błędnymi hasłami
 smbclient //192.168.0.110/C$ -U administrator%haslo123
