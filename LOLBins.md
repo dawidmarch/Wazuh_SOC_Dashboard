@@ -10,6 +10,8 @@ Celem mojego projektu było przeprowadzenie symulacji ataku typu **Brute-Force**
 | **Credential Access** | Brute Force | T1110 | Wielokrotne próby odgadnięcia hasła w celu uzyskania dostępu. |
 | **Initial Access** | Valid Accounts | T1078 | Próba zalogowania na istniejące konto administratora. |
 
+*Wyjaśnienie:* Wykorzystałem narzędzie `smbclient` do masowej próby uwierzytelnienia się do zasobów SMB ofiary, co miało na celu wywołanie zdarzeń typu "Failed Logon" w dziennikach systemu Windows.
+
 ## 3. Metodologia mojego ataku
 ### Faza A: Przygotowanie środowiska (Kali Linux - Atakujący)
 Na mojej maszynie atakującego zainicjowałem próbę uzyskania dostępu do zasobów systemu Windows.
