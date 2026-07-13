@@ -29,7 +29,7 @@ Z poziomu **Kali Linux** wykonałem sekwencję prób połączenia z zasobem `C$`
 
 **Procedura, którą wykonałem:**
 1. Użyłem narzędzia `smbclient` w celu wygenerowania serii prób uwierzytelnienia.
-2. Każda nieudana próba logowania generowała zdarzenie **Event ID 4625** (*An account failed to log on*) w dzienniku zdarzeń *Security* systemu Windows, co pozwoliło na identyfikację ataku przez agenta Wazuh.
+2. Każda nieudana próba logowania generowała zdarzenie **Event ID 4625** w dzienniku zdarzeń *Security* systemu Windows, co pozwoliło na identyfikację ataku przez agenta Wazuh.
 
 ## 4. Moja analiza logów (Wazuh Dashboard)
 Po wykryciu aktywności przez system, poddałem alerty analizie wewnątrz dashboardu Wazuh.
