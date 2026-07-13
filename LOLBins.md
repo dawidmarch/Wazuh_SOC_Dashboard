@@ -14,3 +14,8 @@ Celem mojego projektu było przeprowadzenie symulacji zaawansowanego ataku typu 
 ## 3. Metodologia mojego ataku
 ### Faza A: Przygotowanie środowiska (Kali Linux - Atakujący)
 Na mojej maszynie atakującego zainicjowałem próbę uzyskania dostępu do zasobów systemu Windows.
+
+**Komendy, których użyłem (próba logowania):**
+```bash
+# Próba połączenia z zasobem SMB
+smbclient //192.168.0.110/C$ -U administrator%haslo123
