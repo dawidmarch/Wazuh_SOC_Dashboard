@@ -41,7 +41,31 @@ Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny fi
 `agent.ip: "192.168.0.110"`
 Pozwoliło to na odizolowanie logów ofiary od logów systemowych serwera, co drastycznie podniosło czytelność danych. Wizualizacje zostały oparte na domyślnych indeksach `wazuh-alerts-*` z wykorzystaniem agregacji `Terms` oraz `Date Histogram` dla wykresów czasowych.
 
-## Podgląd Systemu
+### 5. Analiza Operacyjna: Podgląd Systemu (24h)
+
+<img width="1867" height="785" alt="1" src="https://github.com/user-attachments/assets/0744307a-2713-4d66-8d81-07486b992a2f" />
+
+Powyższy zrzut ekranu przedstawia realny widok dashboardu w środowisku produkcyjnym/laboratoryjnym, ilustrujący aktywność na hoście `DESKTOP-UR3OJVV` w cyklu dobowym. Dashboard został skonfigurowany w sposób pozwalający na natychmiastową kategoryzację zdarzeń.
+
+### Szczegółowy podział komponentów Dashboardu:
+
+#### 1. Moduł Procedur Reagowania (SOC Playbook)
+Umieszczony w lewym górnym rogu panel Markdown pełni rolę "ściągi" dla analityka. Skrócenie procesu decyzyjnego poprzez wypunktowanie priorytetowych działań (izolacja hosta, analiza PID, eskalacja do administratora) jest kluczowe w sytuacjach podbramkowych (MTTR).
+
+#### 2. Moduł Wizualizacji Stanu (Metrics & Gauge)
+* **Alert Level Gauge:** Wskazuje obecnie 483 zdarzenia, co przy przyjętej skali (0-1000) pozycjonuje system w strefie średniego/wysokiego zagrożenia (żółto-pomarańczowy segment).
+* **Metric Counter:** Liczba "26" odnosi się do ostatniego interwału czasowego, pozwalając na szybką detekcję nagłego wzrostu aktywności w porównaniu do średniej.
+
+#### 3. Wykres Trendów (Line Chart - Activity)
+Wykres liniowy wizualizuje natężenie zdarzeń w rozbiciu na 30-minutowe interwały. Widoczny "płaski" odcinek przechodzący w wyraźne skoki aktywności pozwala na korelację działań atakującego w czasie – od fazy rekonesansu, przez modyfikacje systemowe, aż po aktywne działania post-exploitation.
+
+#### 4. Szczegółowy Rejestr (Alerts-Windows Table)
+Tabela pozwala na zaawansowany "Threat Hunting". Analizując przykładowe dane, możemy zidentyfikować następujące techniki ataku (zgodnie z metodologią MITRE ATT&CK):
+
+* **Modyfikacje Rejestru (Level 5):** Liczne zdarzenia typu `Registry Value Integrity Checksum Changed` (75) oraz `Registry Key Integrity Checksum Changed` (59) sugerują próby utrzymania trwałości (Persistence) lub modyfikacje konfiguracji systemowej przez szkodliwe oprogramowanie.
+* **Wykonywanie skryptów (Level 9 & 4):** Wykrycie `C:\Windows\SysWOW64\WindowsPowerShell 1.0\powershell.exe` tworzącego plik skryptu wskazuje na aktywność typu "Fileless" lub użycie PowerShell do pobrania dodatkowych modułów ataku (Downloader/Stager).
+* **Detekcja Malware (Level 15):** Zdarzenie `Executable file dropped in folder commonly used by malware` z najwyższym poziomem ważności (15) jest bezpośrednim sygnałem krytycznym, wymagającym natychmiastowej aktywacji procedury izolacji hosta, zgodnie z instrukcją w panelu Markdown.
+* **Monitoring Plików:** `Executable dropped in Windows root folder` (73) świadczy o próbie eskalacji uprawnień lub instalacji binariów w chronionych lokalizacjach systemowych.
 
 
 
