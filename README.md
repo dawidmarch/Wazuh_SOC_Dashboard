@@ -15,7 +15,7 @@ Projekt przedstawia autorski dashboard stworzony w środowisku Wazuh/Kibana, maj
 * **Endpoint (Ofiara):** Windows 10 Pro – `192.168.0.110` (Zainstalowany agent Wazuh oraz sensor Microsoft Sysmon z konfiguracją SwiftOnSecurity).
 * **System Atakującego:** Kali Linux – adresacja w tej samej podsieci `192.168.0.109` (Platforma do generowania ruchu i symulacji ataków).
 
-## Główne Funkcjonalności Dashboardu
+## 1. Główne Funkcjonalności Dashboardu
 Zaprojektowany przeze mnie dashboard zawiera moduły kluczowe dla szybkiej oceny stanu bezpieczeństwa hosta:
 
 ### 1. Panel Procedur Reagowania (Playbook)
@@ -35,13 +35,13 @@ Dolna sekcja dashboardu to konfigurowalna tabela, która filtruje logi według:
 * Poziomu ważności (`rule.level`).
 * Nazwy agenta (`agent.name`).
 
-## Wdrożenie techniczne
+## 2. Wdrożenie techniczne
 
 Aby Dashboard działał poprawnie na wybranym agencie, zastosowałem globalny filtr w środowisku Kibana:
 `agent.ip: "192.168.0.110"`
 Pozwoliło to na odizolowanie logów ofiary od logów systemowych serwera, co drastycznie podniosło czytelność danych. Wizualizacje zostały oparte na domyślnych indeksach `wazuh-alerts-*` z wykorzystaniem agregacji `Terms` oraz `Date Histogram` dla wykresów czasowych.
 
-## Analiza Operacyjna: Podgląd Systemu (24h)
+## 3. Analiza Operacyjna: Podgląd Systemu (24h)
 
 <img width="1867" height="785" alt="1" src="https://github.com/user-attachments/assets/0744307a-2713-4d66-8d81-07486b992a2f" />
 
@@ -49,17 +49,17 @@ Powyższy zrzut ekranu przedstawia realny widok dashboardu w środowisku produkc
 
 ### Szczegółowy podział komponentów Dashboardu:
 
-####  Moduł Procedur Reagowania (SOC Playbook)
+#### 1. Moduł Procedur Reagowania (SOC Playbook)
 Umieszczony w lewym górnym rogu panel Markdown pełni rolę "ściągi" dla analityka. Skrócenie procesu decyzyjnego poprzez wypunktowanie priorytetowych działań (izolacja hosta, analiza PID, eskalacja do administratora) jest kluczowe w sytuacjach podbramkowych (MTTR).
 
-####  Moduł Wizualizacji Stanu (Metrics & Gauge)
+#### 2. Moduł Wizualizacji Stanu (Metrics & Gauge)
 * **Alert Level Gauge:** Wskazuje obecnie 483 zdarzenia, co przy przyjętej skali (0-1000) pozycjonuje system w strefie średniego/wysokiego zagrożenia (żółto-pomarańczowy segment).
 * **Metric Counter:** Liczba "26" odnosi się do ostatniego interwału czasowego, pozwalając na szybką detekcję nagłego wzrostu aktywności w porównaniu do średniej.
 
-####  Wykres Trendów (Line Chart - Activity)
+#### 3. Wykres Trendów (Line Chart - Activity)
 Wykres liniowy wizualizuje natężenie zdarzeń w rozbiciu na 30-minutowe interwały. Widoczny "płaski" odcinek przechodzący w wyraźne skoki aktywności pozwala na korelację działań atakującego w czasie – od fazy rekonesansu, przez modyfikacje systemowe, aż po aktywne działania post-exploitation.
 
-####  Szczegółowy Rejestr (Alerts-Windows Table)
+#### 4. Szczegółowy Rejestr (Alerts-Windows Table)
 Tabela pozwala na zaawansowany "Threat Hunting". Analizując przykładowe dane, możemy zidentyfikować następujące techniki ataku (zgodnie z metodologią MITRE ATT&CK):
 
 * **Modyfikacje Rejestru (Level 5):** Liczne zdarzenia typu `Registry Value Integrity Checksum Changed` (75) oraz `Registry Key Integrity Checksum Changed` (59) sugerują próby utrzymania trwałości (Persistence) lub modyfikacje konfiguracji systemowej przez szkodliwe oprogramowanie.
@@ -67,7 +67,7 @@ Tabela pozwala na zaawansowany "Threat Hunting". Analizując przykładowe dane, 
 * **Detekcja Malware (Level 15):** Zdarzenie `Executable file dropped in folder commonly used by malware` z najwyższym poziomem ważności (15) jest bezpośrednim sygnałem krytycznym, wymagającym natychmiastowej aktywacji procedury izolacji hosta, zgodnie z instrukcją w panelu Markdown.
 * **Monitoring Plików:** `Executable dropped in Windows root folder` (73) świadczy o próbie eskalacji uprawnień lub instalacji binariów w chronionych lokalizacjach systemowych.
 
-## Przyszły rozwój
+## 4. Przyszły rozwój
 * **Integracja z powiadomieniami:** Konfiguracja alertów wysyłanych przez e-mail/Slack dla zdarzeń o poziomie >= 12.
 * **Threat Hunting:** Wdrożenie dodatkowych reguł wykrywających techniki z macierzy MITRE ATT&CK.
 * **Automatyzacja:** Skryptowanie izolacji hosta przez API Wazuh po wykryciu specyficznego ataku.
