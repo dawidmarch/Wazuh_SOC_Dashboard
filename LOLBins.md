@@ -10,3 +10,5 @@ Celem mojego projektu było przeprowadzenie symulacji zaawansowanego ataku typu 
 | **Discovery** | File and Directory Discovery | T1083 | Przeszukiwanie systemu w celu pozyskania informacji. |
 
 *Wyjaśnienie:* Wykorzystałem wbudowane binarki systemowe, co pozwoliło mi na ominięcie klasycznych sygnatur antywirusowych i przetestowanie reakcji systemu monitorującego na "bezzłośliwe" narzędzia użyte w niebezpiecznym kontekście.
+
+## 3. Metodologia mojego ataku
