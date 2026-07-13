@@ -8,3 +8,5 @@ Celem mojego projektu było przeprowadzenie symulacji zaawansowanego ataku typu 
 | :--- | :--- | :--- | :--- |
 | **Execution** | PowerShell | T1059.001 | Wykonanie złośliwego kodu przez interpretator PowerShell. |
 | **Discovery** | File and Directory Discovery | T1083 | Przeszukiwanie systemu w celu pozyskania informacji. |
+
+*Wyjaśnienie:* Wykorzystałem wbudowane binarki systemowe, co pozwoliło mi na ominięcie klasycznych sygnatur antywirusowych i przetestowanie reakcji systemu monitorującego na "bezzłośliwe" narzędzia użyte w niebezpiecznym kontekście.
