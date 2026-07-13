@@ -46,3 +46,7 @@ Po wykryciu aktywności przez system, poddałem alerty analizie wewnątrz dashbo
     - **Authentication Result:** `Failure`
     - **Target User:** `administrator`
     - **EventID:** `4625` (Failed Logon)
+
+## 5. Wnioski techniczne 
+- **Krytyczność:** Podczas moich testów potwierdziłem, że system SIEM jest kluczowy dla wykrywania prób łamania haseł. Nawet pojedyncze próby połączenia (Error: NT_STATUS_IO_TIMEOUT) zostawiają ślad, który pozwala analitykowi zidentyfikować źródło ataku (adres IP Kali Linux).
+- **Widoczność:** Zrozumiałem, jak ważne jest monitorowanie logów `Security` (EventChannel) na Windowsie. Bez odpowiedniej konfiguracji `ossec.conf` dla tego kanału, ataki typu brute-force pozostałyby niezauważone przez dashboard.
